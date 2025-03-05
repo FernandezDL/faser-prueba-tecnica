@@ -21,7 +21,7 @@
 					Duración (min) <span *ngIf="sortColumn === 'minutos'">{{ sortDirection ? '▲' : '▼' }}</span>
 				</th>	
 				<th (click)="sortBy('fav')">
-					Favorita <span *ngIf="sortColumn === 'fav'"></span>
+					Favorita <span *ngIf="sortColumn === 'fav'">{{ sortDirection ? '▲' : '▼' }}</span>
 				</th>				  
 			  </tr>
 			</thead>
