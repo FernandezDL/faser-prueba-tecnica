@@ -125,5 +125,8 @@
         }
       }
     }},
-  "defaultProject": "faser-prueba-tecnica"
+  "defaultProject": "faser-prueba-tecnica",
+  "cli": {
+    "analytics": false
+  }
 }
