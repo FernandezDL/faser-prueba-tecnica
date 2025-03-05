@@ -92,4 +92,11 @@ export class AppComponent {
 	selectFav(tarea: Tarea) {
 		tarea.fav = !tarea.fav;
 	}	  
+
+	randomizeOrder() {
+		this.tareas = this.tareas
+		  .map(tarea => ({ tarea, sort: Math.random() })) // Asigna un número aleatorio a cada tarea
+		  .sort((a, b) => a.sort - b.sort) // Ordena según el número aleatorio
+		  .map(obj => obj.tarea); // Extrae las tareas ordenadas
+	}	  
 }

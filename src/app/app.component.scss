@@ -29,11 +29,13 @@ table {
     align-items: center;
     justify-content: center;
 
+    font-weight: bold;
+
     cursor: pointer;
 }
 
 .add-task:hover{
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .tableDiv{
@@ -62,6 +64,7 @@ table {
     width: 155px;
     height: 35px;
     border-radius: 10px;
+    font-weight: bold;
 
     &.disabled {
         background: gray;
@@ -76,7 +79,7 @@ table {
 
     &.active:hover{
         background: darkred;
-        font-weight: bold;
+        font-weight: bolder;
     }
 }
 
@@ -102,5 +105,30 @@ td{
 
 .fav-text {
     font-weight: bold;
-  }
+}
   
+.randomBttn{
+    width: 155px;
+    height: 35px;
+    border-radius: 10px;
+
+    background: rgb(96, 96, 187);
+    color: white;
+    
+    font-weight: bold;
+}
+
+.bttnsContainer{
+    display: flex;
+    flex-direction: row;
+
+    gap: 35px;
+    
+}
+
+.randomBttn:hover{
+    font-weight: bolder;
+    color: white;
+
+    background-color: rgb(74, 74, 145);
+}

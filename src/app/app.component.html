@@ -40,6 +40,11 @@
 			</tbody>
 		  </table>
 
+		  <div class="bttnsContainer">
+			<button class="randomBttn" (click)="randomizeOrder()">
+				Ordenar random
+			</button>
+
 			<button 
 				class="removeBttn" 
 				[ngClass]="{ 'disabled': selectedTasks.size === 0, 'active': selectedTasks.size > 0 }"
@@ -48,6 +53,7 @@
 			>
 				Eliminar
 			</button>
+		  </div>
 	</div>
 
 	<div *ngIf="popupOpen" class="modal-overlay" >
