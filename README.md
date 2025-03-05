@@ -4,9 +4,11 @@
 2. Clonar su fork en su equipo local.
 3. Ingresar vía Terminal o Command Prompt a la carpeta del proyecto y correr `npm install` para descargar las dependencias.
 4. Correr el servidor local con `ng serve`.
-   4.1. En caso de no funcionar, en una terminal dentro del proyecto correr `set NODE_OPTIONS=--openssl-legacy-provider`
-   4.2 Luego correr `ng serve`
-5. Ingresar a `http://localhost:4200` para ver el sitio de pruebas.
+
+    4.1. En caso de no funcionar, en una terminal dentro del proyecto correr `set NODE_OPTIONS=--openssl-legacy-provider`
+
+    4.2 Luego correr `ng serve`
+6. Ingresar a `http://localhost:4200` para ver el sitio de pruebas.
 ## Requerimientos
 En este repositorio encontrarás un proyecto base Angular con elementos muy básicos. Dentro de `AppComponent` se encuentra una variable que contiene un listado de tareas. Debes realizar las modificaciones necesarias para obtener los siguientes resultados:
 1. Cambiar el listado ordenado por una tabla HTML.
@@ -22,3 +24,6 @@ En este repositorio encontrarás un proyecto base Angular con elementos muy bás
 - Se favorecerá al código legible, comentado y que siga buenas prácticas de programación.
 - Concentrarse únicamente en el cumplimiento de los requerimientos. Se ignorará el aspecto gráfico de la aplicación.
 - Cualquier duda sobre los requerimientos o la entrega comunicarla vía WhatsApp.
+
+## Autora
+Autora para esta versión: Diana Lucía Fernández Villatoro
