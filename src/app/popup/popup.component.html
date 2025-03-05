@@ -1,0 +1,14 @@
+<div class="modal">
+    <div class="bttnDiv">
+        <button class="closeBttn" (click)="closePopup()">X</button>
+    </div>
+
+    <h2>Agregar tareas</h2>
+
+    <div class="inputContainer">
+        <input type="text" [(ngModel)]="newTaskTitle" placeholder="Nombre de la tarea">
+        <input type="number" [(ngModel)]="newTaskTime" placeholder="Tiempo de la tarea (minutos)">
+    </div>
+
+    <button (click)="addTask()" class="addTaskBttn">Agregar</button>
+</div>

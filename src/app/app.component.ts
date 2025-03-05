@@ -9,6 +9,7 @@ import { Tarea } from './tarea';
 })
 export class AppComponent {
 	tareas: Tarea[];
+	popupOpen = false;
 
 	constructor(
         public service: AppService,
@@ -21,4 +22,28 @@ export class AppComponent {
 	async obtenerTareas() {
 		this.tareas = await this.service.obtenerTareas();
 	}
+
+	openPopup() {
+		this.popupOpen = true;
+	}
+
+	closePopup() {
+		this.popupOpen = false;
+	}
+
+	addNewTask(tarea: { titulo: string; minutos: number }) {
+		// Buscar el último ID en la lista de tareas
+		const lastId = this.tareas.length > 0 
+			? Math.max(...this.tareas.map(t => t.id)) // Encuentra el ID más alto
+			: 0; // Si la lista está vacía, empieza desde 0
+	
+		const newTask = {
+			id: lastId + 1, // Asigna un ID 
+			titulo: tarea.titulo,
+			minutos: tarea.minutos
+		};
+		
+		this.tareas.push(newTask); 
+		this.closePopup(); 
+	  }
 }

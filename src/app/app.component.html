@@ -4,21 +4,28 @@
 	
 	<h2>Listado de tareas</h2>
 	
-	<table border="1">
-		<thead>
-		  <tr>
-			<th>No.</th>
-			<th>Tarea</th>
-			<th>Duración (minutos)</th>
-		  </tr>
-		</thead>
-		<tbody>
-		  <tr *ngFor="let tarea of tareas; let i = index">
-			<td class="center-column">{{ i+1 }}</td>
-			<td>{{ tarea.titulo }}</td>
-			<td class="center-column">{{ tarea.minutos }}</td>
-		  </tr>
-		</tbody>
-	  </table>
-	  
+	<div class="tableDiv">
+		<button class="add-task" (click)="openPopup()">+</button>
+
+		<table border="1">
+			<thead>
+			  <tr>
+				<th>No.</th>
+				<th>Tarea</th>
+				<th>Duración (minutos)</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr *ngFor="let tarea of tareas; let i = index">
+				<td class="center-column">{{ i+1 }}</td>
+				<td>{{ tarea.titulo }}</td>
+				<td class="center-column">{{ tarea.minutos }}</td>
+			  </tr>
+			</tbody>
+		  </table>
+	</div>
+
+	<div *ngIf="popupOpen" class="modal-overlay" >
+		<app-popup (cerrar)="closePopup()" (taskAdded)="addNewTask($event)"></app-popup>
+	</div>
 </div>

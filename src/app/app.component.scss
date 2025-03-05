@@ -13,9 +13,46 @@ h2{
 }
 
 table {
-    width: 60%;
+    width: 100%;
 }
 
 .center-column{
     text-align: center;
 }
+
+.add-task{
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.add-task:hover{
+    font-weight: bold;
+}
+
+.tableDiv{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    
+    gap: 20px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
