@@ -18,6 +18,7 @@ table {
 
 .center-column{
     text-align: center;
+    padding-left: 0px;
 }
 
 .add-task{
@@ -80,5 +81,21 @@ table {
 }
 
 .pointer{
+    cursor: pointer;
+}
+
+img{
+    width: 35px;
+    height: 35px;
+    margin-top: 5px;
+}
+
+td{
+    padding-left: 10px;
+}
+
+.favBttn{
+    background-color: transparent;
+    border: none;
     cursor: pointer;
 }

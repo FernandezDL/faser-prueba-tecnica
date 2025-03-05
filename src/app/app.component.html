@@ -19,6 +19,9 @@
 				</th>
 				<th (click)="sortBy('minutos')">
 					Duración (min) <span *ngIf="sortColumn === 'minutos'">{{ sortDirection ? '▲' : '▼' }}</span>
+				</th>	
+				<th (click)="sortBy('fav')">
+					Favorita <span *ngIf="sortColumn === 'fav'"></span>
 				</th>				  
 			  </tr>
 			</thead>
@@ -28,6 +31,11 @@
 				<td class="center-column">{{ tarea.id }}</td>
 				<td>{{ tarea.titulo }}</td>
 				<td class="center-column">{{ tarea.minutos }}</td>
+				<td class="center-column">
+					<button class="favBttn" (click)="selectFav(tarea)">
+						<img [src]="tarea.fav ? '../assets/img/fav.png' : '../assets/img/no_fav.png'" alt="Favorito">
+					</button>
+				</td>
 			  </tr>
 			</tbody>
 		  </table>

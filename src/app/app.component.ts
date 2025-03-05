@@ -24,6 +24,7 @@ export class AppComponent {
 
 	async obtenerTareas() {
 		this.tareas = await this.service.obtenerTareas();
+		this.tareas = this.tareas.map(t => new Tarea(t.id, t.titulo, t.minutos, t.fav !==undefined ? t.fav: false));
 	}
 
 	openPopup() {
@@ -40,11 +41,12 @@ export class AppComponent {
 			? Math.max(...this.tareas.map(t => t.id)) // Encuentra el ID más alto
 			: 0; // Si la lista está vacía, empieza desde 0
 	
-		const newTask = {
-			id: lastId + 1, // Asigna un ID 
-			titulo: tarea.titulo,
-			minutos: tarea.minutos
-		};
+		const newTask = new Tarea(
+			lastId + 1, 
+			tarea.titulo, 
+			tarea.minutos, 
+			false
+		);
 		
 		this.tareas.push(newTask); 
 		this.closePopup(); 
@@ -86,4 +88,8 @@ export class AppComponent {
 		  }
 		});
 	}
+
+	selectFav(tarea: Tarea) {
+		tarea.fav = !tarea.fav;
+	}	  
 }
