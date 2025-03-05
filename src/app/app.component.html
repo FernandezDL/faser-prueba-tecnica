@@ -25,6 +25,15 @@
 			  </tr>
 			</tbody>
 		  </table>
+
+			<button 
+				class="removeBttn" 
+				[ngClass]="{ 'disabled': selectedTasks.size === 0, 'active': selectedTasks.size > 0 }"
+				[disabled]="selectedTasks.size === 0"
+				(click)="removeSelectedTasks()"
+			>
+				Eliminar
+			</button>
 	</div>
 
 	<div *ngIf="popupOpen" class="modal-overlay" >

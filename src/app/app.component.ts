@@ -59,4 +59,9 @@ export class AppComponent {
 	isSelected(tarea: { id: number }): boolean {
 		return this.selectedTasks.has(tarea.id);
 	}
+
+	removeSelectedTasks() {
+		this.tareas = this.tareas.filter(tarea => !this.selectedTasks.has(tarea.id));
+		this.selectedTasks.clear(); // Limpiar la selección después de eliminar
+	}
 }

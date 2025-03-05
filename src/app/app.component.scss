@@ -55,4 +55,25 @@ table {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-  }
+}
+
+.removeBttn{
+    width: 155px;
+    height: 35px;
+    border-radius: 10px;
+
+    &.disabled {
+        background: gray;
+        color: white;
+        cursor: not-allowed;
+    }
+
+    &.active {
+        background: red;
+        color: white;
+    }
+
+    &.active:hover{
+        font-weight: bold;
+    }
+}
