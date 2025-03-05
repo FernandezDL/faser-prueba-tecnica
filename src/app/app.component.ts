@@ -10,6 +10,7 @@ import { Tarea } from './tarea';
 export class AppComponent {
 	tareas: Tarea[];
 	popupOpen = false;
+	selectedTasks = new Set<number>(); 
 
 	constructor(
         public service: AppService,
@@ -45,5 +46,17 @@ export class AppComponent {
 		
 		this.tareas.push(newTask); 
 		this.closePopup(); 
-	  }
+	}
+
+	toggleSelection(tarea: { id: number }) {
+		if (this.selectedTasks.has(tarea.id)) {
+		  this.selectedTasks.delete(tarea.id);
+		} else {
+		  this.selectedTasks.add(tarea.id);
+		}
+	}
+	
+	isSelected(tarea: { id: number }): boolean {
+		return this.selectedTasks.has(tarea.id);
+	}
 }

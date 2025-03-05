@@ -10,6 +10,7 @@
 		<table border="1">
 			<thead>
 			  <tr>
+				<th>Selec</th>
 				<th>No.</th>
 				<th>Tarea</th>
 				<th>Duración (minutos)</th>
@@ -17,6 +18,7 @@
 			</thead>
 			<tbody>
 			  <tr *ngFor="let tarea of tareas; let i = index">
+				<td class="center-column"><input type="checkbox" (change)="toggleSelection(tarea)" [checked]="isSelected(tarea)"></td>
 				<td class="center-column">{{ i+1 }}</td>
 				<td>{{ tarea.titulo }}</td>
 				<td class="center-column">{{ tarea.minutos }}</td>
