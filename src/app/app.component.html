@@ -26,7 +26,7 @@
 			  </tr>
 			</thead>
 			<tbody>
-			  <tr *ngFor="let tarea of tareas; let i = index">
+			  <tr *ngFor="let tarea of tareas; let i = index" [ngClass]="{ 'fav-text': tarea.fav }">
 				<td class="center-column"><input type="checkbox" (change)="toggleSelection(tarea)" [checked]="isSelected(tarea)"></td>
 				<td class="center-column">{{ tarea.id }}</td>
 				<td>{{ tarea.titulo }}</td>
