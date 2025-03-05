@@ -11,6 +11,8 @@ export class AppComponent {
 	tareas: Tarea[];
 	popupOpen = false;
 	selectedTasks = new Set<number>(); 
+	sortColumn: string | null = null;	
+	sortDirection: boolean = true;
 
 	constructor(
         public service: AppService,
@@ -63,5 +65,25 @@ export class AppComponent {
 	removeSelectedTasks() {
 		this.tareas = this.tareas.filter(tarea => !this.selectedTasks.has(tarea.id));
 		this.selectedTasks.clear(); // Limpiar la selección después de eliminar
+	}
+
+	sortBy(column: string) {
+		if (this.sortColumn === column) {
+		  this.sortDirection = !this.sortDirection; // Invierte el orden si ya está ordenado por esta columna
+		} else {
+		  this.sortColumn = column;
+		  this.sortDirection = true; // Inicia en ascendente
+		}
+	  
+		this.tareas.sort((a, b) => {
+		  const valueA = a[column as keyof typeof a];
+		  const valueB = b[column as keyof typeof b];
+	  
+		  if (typeof valueA === "string" && typeof valueB === "string") {
+			return this.sortDirection ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA);
+		  } else {
+			return this.sortDirection ? Number(valueA) - Number(valueB) : Number(valueB) - Number(valueA);
+		  }
+		});
 	}
 }

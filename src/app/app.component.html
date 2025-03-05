@@ -11,15 +11,21 @@
 			<thead>
 			  <tr>
 				<th>Selec</th>
-				<th>No.</th>
-				<th>Tarea</th>
-				<th>Duración (minutos)</th>
+				<th (click)="sortBy('id')">
+					No. <span *ngIf="sortColumn === 'id'">{{ sortDirection ? '▲' : '▼' }}</span>
+				</th>
+				<th (click)="sortBy('titulo')">
+					Tarea <span *ngIf="sortColumn === 'titulo'">{{ sortDirection ? '▲' : '▼' }}</span>
+				</th>
+				<th (click)="sortBy('minutos')">
+					Duración (min) <span *ngIf="sortColumn === 'minutos'">{{ sortDirection ? '▲' : '▼' }}</span>
+				</th>				  
 			  </tr>
 			</thead>
 			<tbody>
 			  <tr *ngFor="let tarea of tareas; let i = index">
 				<td class="center-column"><input type="checkbox" (change)="toggleSelection(tarea)" [checked]="isSelected(tarea)"></td>
-				<td class="center-column">{{ i+1 }}</td>
+				<td class="center-column">{{ tarea.id }}</td>
 				<td>{{ tarea.titulo }}</td>
 				<td class="center-column">{{ tarea.minutos }}</td>
 			  </tr>
